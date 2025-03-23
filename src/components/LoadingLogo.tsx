@@ -117,6 +117,7 @@ export function LoadingLogo() {
                   </linearGradient>
                 </defs>
               </svg>
+              
             </motion.div>
 
             {/* Central logo with multiple layers and effects */}

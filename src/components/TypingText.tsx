@@ -1,6 +1,12 @@
 import { useState, useEffect } from "react";
 
-export default function TypingText({ texts, speed = 100, delay = 2000 }) {
+interface TypingTextProps {
+  texts: string[];
+  speed?: number;
+  delay?: number;
+}
+
+export default function TypingText({ texts, speed = 100, delay = 2000 }: TypingTextProps) {
   const [currentText, setCurrentText] = useState("");
   const [index, setIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);

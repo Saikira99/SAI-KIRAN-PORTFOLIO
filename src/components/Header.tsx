@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Menu, X } from 'lucide-react';
+import { Github, Linkedin, Mail, Menu, X, Instagram } from 'lucide-react';
 import { Logo } from './Logo';
 
-export function Header() {
+export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -49,7 +49,9 @@ export function Header() {
         whileHover={{ scale: 1.02 }}
       >
         <div className="flex justify-between items-center">
-          <Logo />
+          <a href="/">
+            <Logo />
+          </a>
 
           {/* Mobile Menu Button */}
           <button 
@@ -61,7 +63,7 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
-            {["About", "Skills", "Projects", "Contact"].map((item) => (
+            {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
               <motion.a
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -80,7 +82,8 @@ export function Header() {
             {[
               { href: "https://github.com/Saikira99", icon: <Github size={20} /> },
               { href: "https://www.linkedin.com/in/saikiran-chandana-84391820b/", icon: <Linkedin size={20} /> },
-              { href: "mailto:saikiranchan999@gmail.com", icon: <Mail size={20} /> }
+              { href: "mailto:saikiranchan999@gmail.com", icon: <Mail size={20} /> },
+              { href: "https://www.instagram.com/your_instagram_handle", icon: <Instagram size={20} /> }
             ].map((social, index) => (
               <motion.a
                 key={index}
@@ -106,7 +109,7 @@ export function Header() {
             style={{ backgroundColor: "rgba(20, 20, 20, 0.9)" }}
           >
             <div className="flex flex-col gap-4">
-              {["About", "Skills", "Projects", "Contact"].map((item) => (
+              {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
                 <motion.a
                   key={item}
                   href={`#${item.toLowerCase()}`}
@@ -123,7 +126,8 @@ export function Header() {
                 {[
                   { href: "https://github.com/Saikira99", icon: <Github size={20} /> },
                   { href: "https://www.linkedin.com/in/saikiran-chandana-84391820b/", icon: <Linkedin size={20} /> },
-                  { href: "mailto:saikiranchan999@gmail.com", icon: <Mail size={20} /> }
+                  { href: "mailto:saikiranchan999@gmail.com", icon: <Mail size={20} /> },
+                  { href: "https://www.instagram.com/your_instagram_handle", icon: <Instagram size={20} /> }
                 ].map((social, index) => (
                   <motion.a
                     key={index}
@@ -143,4 +147,4 @@ export function Header() {
       </motion.nav>
     </header>
   );
-}
+};
